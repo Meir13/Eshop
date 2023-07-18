@@ -1,6 +1,6 @@
 import express from "express";
 import expressAsyncHandler from "express-async-handler";
-import Product from "../Models/ProductModel";
+import Product from "../Models/ProductModel.js";
 
 export const productRouter = express.Router();
 const PAGE_SIZE = 6;
@@ -36,7 +36,10 @@ productRouter.get(
   "/id/:id",
   expressAsyncHandler(async (req, res) => {
     const { id } = req.params;
-    const product = await Product.findOne({ id });
+    console.log(id);
+    const product = await Product.findById(id);
+    console.log(product);
+
     product
       ? res.send(product)
       : res.status(404).send({ message: "Product not found" });
@@ -86,8 +89,6 @@ productRouter.get(
         ? { price: -1 }
         : order === "toprated"
         ? { rating: -1 }
-        : order === "lowesttoprated"
-        ? { rating: 1 }
         : order === "newest"
         ? { createdAt: -1 }
         : { _id: -1 };
