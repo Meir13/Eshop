@@ -1,6 +1,7 @@
 import { Navbar, Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
+import "./NavBar.css";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ function NavBar() {
       <header className="App-header">
         <Navbar bg="dark" variant="dark">
           <Link
+            className="ms-2"
             onClick={() => {
               navigate(-1);
             }}
