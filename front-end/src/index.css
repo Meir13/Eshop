@@ -12,11 +12,6 @@ code {
     monospace;
 }
 
-header {
-  background-color: #404040;
-  padding: 1rem;
-}
-
 header a {
   color: #ffffff;
   font-weight: bold;
@@ -27,4 +22,26 @@ header a {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+.rating span {
+  color: #ffc000;
+}
+
+.btn-primary,
+.btn-outline-primary {
+  background-color: #f0c040;
+  color: #000000;
+  border-width: 0px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #d3a62c;
+}
+
+a {
+  text-decoration: none;
 }
