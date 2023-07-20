@@ -35,15 +35,15 @@ userRoutes.post(
     });
     try {
       const user = await newUser.save();
+      res.send({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        token: generateToken(user),
+      });
     } catch (error) {
       res.status(400).send({ message: "email already registered" });
     }
-    res.send({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      token: generateToken(user),
-    });
   })
 );
 

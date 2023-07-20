@@ -18,7 +18,7 @@ function NavBar() {
             Back
           </Link>
 
-          <Container className="container">
+          <Container>
             <LinkContainer to="/">
               <Navbar.Brand>
                 <img
