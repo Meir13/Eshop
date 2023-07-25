@@ -1,13 +1,16 @@
-import React from "react";
+import { React, useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import "./Product.css";
+import { addToCartHandler } from "../Services/AddToCart";
+import { Store } from "../Context/Store";
 
 const Product = ({ product }) => {
-  const addToCartHandler = (product) => {
-    console.log(product);
-  };
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const {
+    cart: { cartItems },
+  } = state;
 
   return (
     <Card className="product-card">
@@ -32,7 +35,7 @@ const Product = ({ product }) => {
             </Button>
           ) : (
             <Button
-              onClick={() => addToCartHandler(product)}
+              onClick={() => addToCartHandler(product, cartItems, ctxDispatch)}
               className="btn-primary"
             >
               Add To Cart

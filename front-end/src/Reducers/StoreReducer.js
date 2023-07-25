@@ -13,7 +13,7 @@ export const storeReducer = (state, { type, payload }) => {
     case ADD_TO_CART: {
       const newItem = payload;
       const existingItem = state.cart.cartItems.find(
-        (item) => item.id === newItem.id
+        (item) => item._id === newItem._id
       );
       const cartItems = existingItem
         ? state.cart.cartItems.map((item) =>
@@ -51,6 +51,7 @@ export const storeReducer = (state, { type, payload }) => {
       localStorage.removeItem("userInfo");
       localStorage.removeItem("shippingAddress");
       localStorage.removeItem("paymentMethod");
+      localStorage.removeItem("cartItems");
 
       return {
         ...state,

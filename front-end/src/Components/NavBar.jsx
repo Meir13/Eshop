@@ -1,10 +1,20 @@
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar, Container, Badge, NavDropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
+import { useContext } from "react";
+import { Store } from "../Context/Store";
 import "./NavBar.css";
+import { USER_SIGNOUT } from "../Reducers/Actions";
 
 function NavBar() {
   const navigate = useNavigate();
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+  const { cartItems } = cart;
+
+  const signOutHandler = () => {
+    ctxDispatch({ type: USER_SIGNOUT });
+  };
   return (
     <>
       <header className="App-header">
@@ -30,12 +40,34 @@ function NavBar() {
             </LinkContainer>
 
             <nav>
-              <input type="text"></input>
+              <input type="text" placeholder="search..."></input>
             </nav>
 
             <Link to="/cart" className="nav-link me-4 ms-4">
-              Cart
+              <i className="fas fa-shopping-cart text-white"></i>
+
+              {cartItems.length > 0 && (
+                <Badge pill bg="danger">
+                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+                </Badge>
+              )}
             </Link>
+
+            {userInfo ? (
+              <NavDropdown className="text-white me-5" title={userInfo.name}>
+                <Link
+                  className="dropdown-item"
+                  to="#signout"
+                  onClick={signOutHandler}
+                >
+                  Sign Out
+                </Link>
+              </NavDropdown>
+            ) : (
+              <Link className="text-white" to="/signin">
+                Sign In
+              </Link>
+            )}
           </Container>
         </Navbar>
       </header>
