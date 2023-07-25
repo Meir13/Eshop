@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
 
-function MassageBox({ children, variant }) {
+function MessageBox({ children, variant }) {
   return (
     <div className="text-center">
       <Alert variant={variant || "info"}>{children}</Alert>
@@ -9,4 +9,4 @@ function MassageBox({ children, variant }) {
   );
 }
 
-export default MassageBox;
+export default MessageBox;

@@ -5,7 +5,7 @@ import "./HomePage.css";
 import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from "../Reducers/Actions";
 import { homePageReducer, initialState } from "../Reducers/HomePageReducer";
 import Loading from "../Components/Loading";
-import MassageBox from "../Components/MassageBox";
+import MessageBox from "../Components/MessageBox";
 
 function HomePage() {
   // const [products, setProducts] = useState([]);
@@ -36,7 +36,7 @@ function HomePage() {
         {loading ? (
           <Loading />
         ) : error ? (
-          <MassageBox variant="danger" />
+          <MessageBox variant="danger" />
         ) : (
           <Products products={products}></Products>
         )}
