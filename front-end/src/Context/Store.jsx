@@ -3,7 +3,6 @@ import { useReducer } from "react";
 import { storeReducer } from "../Reducers/StoreReducer";
 
 export const Store = createContext();
-
 const initialState = {
   cart: {
     cartItems: localStorage.getItem("cartItems")
