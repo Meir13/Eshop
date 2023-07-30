@@ -8,8 +8,6 @@ import Loading from "../Components/Loading";
 import MessageBox from "../Components/MessageBox";
 
 function HomePage() {
-  // const [products, setProducts] = useState([]);
-
   const [{ loading, error, products }, dispatch] = useReducer(
     homePageReducer,
     initialState
@@ -24,7 +22,6 @@ function HomePage() {
       } catch (error) {
         dispatch({ type: GET_FAIL, payload: error.message });
       }
-      // setProducts(res.data);
     };
     fetchProducts();
   }, []);

@@ -26,6 +26,7 @@ productRouter.get(
   expressAsyncHandler(async (req, res) => {
     const { token } = req.params;
     const product = await Product.findOne({ token });
+
     product
       ? res.send(product)
       : res.status(404).send({ message: "Product not found" });
@@ -36,9 +37,7 @@ productRouter.get(
   "/id/:id",
   expressAsyncHandler(async (req, res) => {
     const { id } = req.params;
-    console.log(id);
     const product = await Product.findById(id);
-    console.log(product);
 
     product
       ? res.send(product)

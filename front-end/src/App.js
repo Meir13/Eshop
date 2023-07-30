@@ -10,6 +10,7 @@ import CartPage from "./Pages/CartPage";
 import ShippingAddressPage from "./Pages/ShippingAddressPage";
 import PaymentPage from "./Pages/PaymentPage";
 import PlaceOrderPage from "./Pages/PlaceOrderPage";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/shipping" element={<ShippingAddressPage />} />
               <Route path="/payment" element={<PaymentPage />} />
               <Route path="/placeorder" element={<PlaceOrderPage />} />
+              <Route path="/product/:token" element={<ProductPage />} />
             </Routes>
           </main>
         </div>
