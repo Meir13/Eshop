@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroup, ListGroupItem } from "react-bootstrap";
-import Title from "../Title";
+import Title from "../shared/Title";
 import Rating from "../Rating";
 
 const ProductDescription = ({ title, description, rating, price }) => {

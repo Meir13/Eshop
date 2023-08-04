@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useReducer } from "react";
-import Loading from "../Components/Loading";
+import Loading from "../Components/shared/Loading";
 import { Col, Row } from "react-bootstrap";
 import {
   ProductPageReducer,
@@ -12,7 +12,7 @@ import MessageBox from "../Components/MessageBox";
 import ProductDescription from "../Components/ProductPage/ProductDescription";
 import CartDescription from "../Components/ProductPage/CartDescription";
 import { Store } from "../Context/Store";
-import { addToCartHandler } from "../Services/AddToCart";
+import { addToCartHandler } from "../Services/addToCart";
 
 function ProductPage() {
   const params = useParams();

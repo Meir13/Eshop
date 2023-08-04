@@ -9,10 +9,10 @@ import { Store } from "../Context/Store";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-import Title from "../Components/Title";
-import CheckoutSteps from "../Components/CheckoutSteps";
+import Title from "../Components/shared/Title";
+import CheckoutSteps from "../Components/shared/CheckoutSteps";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
-import Loading from "../Components/Loading";
+import Loading from "../Components/shared/Loading";
 
 const reducer = (state, { type, payload }) => {
   switch (type) {

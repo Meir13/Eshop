@@ -1,6 +1,6 @@
 import { React, useContext, useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import Title from "../Components/Title";
+import Title from "../Components/shared/Title";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Store } from "../Context/Store";
 import { toast } from "react-toastify";

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Title from "../Components/Title";
+import Title from "../Components/shared/Title";
 import { Store } from "../Context/Store";
 import { Col, Row } from "react-bootstrap";
 import Cart from "../Components/Cart";

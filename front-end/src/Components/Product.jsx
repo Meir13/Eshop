@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import "./Product.css";
-import { addToCartHandler } from "../Services/AddToCart";
+import { addToCartHandler } from "../Services/addToCart";
 import { Store } from "../Context/Store";
 
 const Product = ({ product }) => {

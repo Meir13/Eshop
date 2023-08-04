@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Store } from "../Context/Store";
 import { SAVE_SHIPPING_ADDRESS } from "../Reducers/Actions";
-import Title from "../Components/Title";
-import CheckoutSteps from "../Components/CheckoutSteps";
+import Title from "../Components/shared/Title";
+import CheckoutSteps from "../Components/shared/CheckoutSteps";
 import { Button, Form } from "react-bootstrap";
 
 const ShippingAddressPage = () => {

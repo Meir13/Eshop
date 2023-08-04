@@ -4,7 +4,7 @@ import Products from "../Components/Products";
 import "./HomePage.css";
 import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from "../Reducers/Actions";
 import { homePageReducer, initialState } from "../Reducers/HomePageReducer";
-import Loading from "../Components/Loading";
+import Loading from "../Components/shared/Loading";
 import MessageBox from "../Components/MessageBox";
 
 function HomePage() {
