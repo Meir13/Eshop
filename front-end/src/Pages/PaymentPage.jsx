@@ -31,7 +31,7 @@ const PaymentPage = () => {
 
   return (
     <div>
-      <Title>Payment</Title>
+      <Title title="Payment"></Title>
 
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
 

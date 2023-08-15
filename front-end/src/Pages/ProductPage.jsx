@@ -35,7 +35,6 @@ function ProductPage() {
       dispatch({ type: GET_REQUEST });
       try {
         const response = await axios.get(`/products/token/${token}`);
-        console.log(response.data);
 
         dispatch({ type: GET_SUCCESS, payload: response.data });
       } catch (error) {

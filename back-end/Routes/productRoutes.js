@@ -63,9 +63,7 @@ productRouter.get(
         : {};
 
     const categoryFilter =
-      category && category !== "all"
-        ? { title: { $regex: searchQuery, $options: "i" } }
-        : {};
+      category && category !== "all" ? { category: category } : {};
 
     const ratingFilter =
       rating && rating !== "all"
@@ -102,7 +100,12 @@ productRouter.get(
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 
-    const countProducts = products.length;
+    const countProducts = await Product.countDocuments({
+      ...queryFilter,
+      ...categoryFilter,
+      ...ratingFilter,
+      ...priceFilter,
+    });
 
     res.send({
       products,

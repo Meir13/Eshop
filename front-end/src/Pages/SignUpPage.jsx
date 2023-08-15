@@ -51,7 +51,7 @@ function SignUpPage() {
   return (
     <>
       <Container className="small-container">
-        <Title>Sign Up</Title>
+        <Title title="Sign Up"></Title>
 
         <h1 className="my-3">Sign Up</h1>
 

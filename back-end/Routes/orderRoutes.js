@@ -29,7 +29,7 @@ orderRouter.post(
     try {
       const newOrder = new Order({
         orderItems: req.body.orderItems.map((item) => ({
-          //...item, //may be a problem
+          ...item, //may be a problem
           product: item._id,
         })),
         shippingAddress: req.body.shippingAddress,

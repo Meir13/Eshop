@@ -6,6 +6,7 @@ import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from "../Reducers/Actions";
 import { homePageReducer, initialState } from "../Reducers/HomePageReducer";
 import Loading from "../Components/shared/Loading";
 import MessageBox from "../Components/MessageBox";
+import Title from "../Components/shared/Title";
 
 function HomePage() {
   const [{ loading, error, products }, dispatch] = useReducer(
@@ -28,6 +29,7 @@ function HomePage() {
 
   return (
     <>
+      <Title title="Home"></Title>
       <h1>Products</h1>
       <div className="products">
         {loading ? (

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rating = ({ rating, numReviews, caption }) => {
+const Rating = ({ rating, numReviews, caption, makeBlue }) => {
   return (
     <div className="rating">
       <span>

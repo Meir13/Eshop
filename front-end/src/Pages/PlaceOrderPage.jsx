@@ -36,13 +36,14 @@ const PlaceOrderPage = () => {
   const { paymentMethod } = cart;
 
   const submitHandler = async (e) => {
+    e.preventDefault();
+
     try {
-      e.preventDefault();
       dispatch({ type: GET_REQUEST });
       const { data } = await axios.post(
         "/orders",
         {
-          orderItems: cart.orderItems,
+          orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
           paymentMethod: cart.paymentMethod,
           itemsPrice: cart.itemsPrice,
@@ -87,9 +88,9 @@ const PlaceOrderPage = () => {
 
   return (
     <div>
-      <Title title="Orders Summary" />
+      <Title title="Order Summary" />
       <CheckoutSteps step1 step2 step3 step4 />
-      <h1 className="my-3">Orders Summary</h1>
+      <h1 className="my-3">Order Summary</h1>
       <Row>
         <Col md={8}>
           <Card className="mb-3">
@@ -124,7 +125,7 @@ const PlaceOrderPage = () => {
           </Card>
 
           <Card className="mb-3">
-            <Card.Body>
+            <Card.Body className="h-100">
               <Card.Title>Items</Card.Title>
 
               <ListGroup variant="flush">
@@ -135,13 +136,15 @@ const PlaceOrderPage = () => {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="img-fluid rounded img-thumbnail"
+                          className="img-fluid rounded "
                         />{" "}
                         <Link to={`/product/${item.token}`}>{item.title}</Link>
                       </Col>
+
                       <Col md={3}>
                         <span>{item.quantity}</span>
                       </Col>
+
                       <Col md={3}>${item.price}</Col>
                     </Row>
                   </ListGroup.Item>
@@ -154,7 +157,7 @@ const PlaceOrderPage = () => {
 
         <Col md={4}>
           <Card>
-            <Card.Body>
+            <Card.Body className="h-100">
               <Card.Title>Summary: </Card.Title>
               <ListGroup variant="flush">
                 <ListGroup.Item>

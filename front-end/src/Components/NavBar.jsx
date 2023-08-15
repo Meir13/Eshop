@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { Store } from "../Context/Store";
 import "./NavBar.css";
 import { USER_SIGNOUT } from "../Reducers/Actions";
+import SearchBox from "./searchBox/SearchBox";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -39,8 +40,8 @@ function NavBar() {
               </Navbar.Brand>
             </LinkContainer>
 
-            <nav>
-              <input type="text" placeholder="search..."></input>
+            <nav className="d-flex mx-auto align-items-center">
+              <SearchBox />
             </nav>
 
             <Link to="/cart" className="nav-link me-4 ms-4">
