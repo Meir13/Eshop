@@ -3,8 +3,8 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import "./Product.css";
-import addToCartHandler from "../Services/addToCart";
 import { Store } from "../Context/Store";
+import addToCartHandler from "../Services/addToCartV2";
 
 const Product = ({ product }) => {
   const { state, dispatch: ctxDispatch } = useContext(Store);
