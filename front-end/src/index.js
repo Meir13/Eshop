@@ -8,8 +8,10 @@ import { HelmetProvider } from "react-helmet-async";
 import axios from "axios";
 import { StoreProvider } from "./Context/Store";
 
-axios.defaults.baseURL = "https://e-shop-one-beryl.vercel.app/api";
-//"http://localhost:5000/api"
+console.log(process.env.REACT_APP_API_ROUTE);
+axios.defaults.baseURL = process.env.REACT_APP_API_ROUTE
+  ? process.env.REACT_APP_API_ROUTE
+  : "http://localhost:5000/api";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
