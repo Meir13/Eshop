@@ -12,7 +12,7 @@ import MessageBox from "../Components/MessageBox";
 import ProductDescription from "../Components/ProductPage/ProductDescription";
 import CartDescription from "../Components/ProductPage/CartDescription";
 import { Store } from "../Context/Store";
-import { addToCartHandler } from "../Services/addToCart";
+import addToCartHandler from "../Services/addToCart";
 
 function ProductPage() {
   const params = useParams();

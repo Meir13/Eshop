@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { ADD_TO_CART, GET_FAIL } from "../Reducers/Actions";
 
-export const addToCartHandler = async (product, cartItems, ctxDispatch) => {
+const addToCartHandler = async (product, cartItems, ctxDispatch) => {
   const existingItems = cartItems.find((item) => item._id === product._id);
   const quantity = existingItems ? existingItems.quantity + 1 : 1;
 
@@ -18,3 +18,5 @@ export const addToCartHandler = async (product, cartItems, ctxDispatch) => {
     ctxDispatch({ type: GET_FAIL, payload: error.message });
   }
 };
+
+export default addToCartHandler;
